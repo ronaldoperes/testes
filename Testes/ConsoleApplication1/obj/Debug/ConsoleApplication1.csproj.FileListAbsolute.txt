@@ -1,1 +1,6 @@
 C:\Bizsys\testes\Testes\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Bizsys\testes\Testes\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Bizsys\testes\Testes\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Bizsys\testes\Testes\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Bizsys\testes\Testes\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Bizsys\testes\Testes\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
