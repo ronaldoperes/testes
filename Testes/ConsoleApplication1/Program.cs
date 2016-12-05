@@ -10,27 +10,41 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            int width = int.Parse(Console.ReadLine()); // the number of cells on the X axis
-            int height = int.Parse(Console.ReadLine()); // the number of cells on the Y axis
+            int n = 5;// int.Parse(Console.ReadLine()); // the number of temperatures to analyse
+            string temps = "42 -5 -2 3 4 55 12 21 -5 24";// Console.ReadLine(); // the n temperatures expressed as integers ranging from -273 to 5526
 
-            string[,] matrix = new string[height, width];
-
-            for (int i = 0; i < height; i++)
-            {
-                string line = Console.ReadLine(); // width characters, each either 0 or .
-                for (int j = 0; j < width; j++)
-                {
-                    matrix[i, j] = line[j].ToString();
-                }
-
-            }
-
+            Console.Error.WriteLine(temps);
+            Console.Error.WriteLine(n);
             // Write an action using Console.WriteLine()
             // To debug: Console.Error.WriteLine("Debug messages...");
 
 
-            // Three coordinates: a node, its right neighbor, its bottom neighbor
-            //Console.WriteLine("0 0 1 0 0 1");
+            string[] str;
+
+            if (temps.Length > 0)
+
+            {
+                str = temps.Split(' ');
+
+                int x = int.Parse(str[0]);
+
+                for (int i = 1; i < str.Length; i++)
+                {
+                    int y = int.Parse(str[i]);
+
+                    if (Math.Abs(x) > Math.Abs(y))
+                        x = y;
+                    else if (Math.Abs(x) == Math.Abs(y))
+                        if (x < 0)
+                            x = y;
+                }
+                Console.WriteLine(x);
+            }
+            else
+            {
+                Console.WriteLine(0);
+            }
         }
+
     }
 }
