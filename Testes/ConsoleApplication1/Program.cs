@@ -14,7 +14,7 @@ namespace ConsoleApplication1
             // exercicio TEMPERATURES do codingame
             int n = 5;// int.Parse(Console.ReadLine()); // the number of temperatures to analyse
             string temps = "42 -5 -2 3 4 55 12 21 -5 24";// Console.ReadLine(); // the n temperatures expressed as integers ranging from -273 to 5526
-            string sdc= "42 -5 -2 3 4 55 12 21 -5 24";
+            string sdc= "42 -5 -2 2 3 4 55 12 21 -5 24";
             Console.Error.WriteLine(temps);
             Console.Error.WriteLine(n);
             // Write an action using Console.WriteLine()
