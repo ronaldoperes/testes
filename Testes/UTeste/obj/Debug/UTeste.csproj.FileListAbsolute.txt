@@ -1,0 +1,6 @@
+C:\Bizsys\testes\Testes\UTeste\bin\Debug\UTeste.exe.config
+C:\Bizsys\testes\Testes\UTeste\bin\Debug\UTeste.exe
+C:\Bizsys\testes\Testes\UTeste\bin\Debug\UTeste.pdb
+C:\Bizsys\testes\Testes\UTeste\obj\Debug\UTeste.csprojResolveAssemblyReference.cache
+C:\Bizsys\testes\Testes\UTeste\obj\Debug\UTeste.exe
+C:\Bizsys\testes\Testes\UTeste\obj\Debug\UTeste.pdb
