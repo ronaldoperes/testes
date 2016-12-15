@@ -10,32 +10,43 @@ namespace ConsoleApplication2
     {
         static void Main(string[] args)
         {
-            List<int> asdf = new List<int>();
+            string str = "0 0 0 1 0- 0 0 .";
+            int n = str.Length;
 
-            asdf.Add(29);
-            asdf.Add(22);
-            asdf.Add(21);
-            asdf.Add(27);
+            string s = "";
 
-            asdf = asdf.OrderByDescending(i => i).ToList();
-
-            int smallestStrengthDifference = int.MaxValue;
-
-            for (int i = 0; i < asdf.Count; i++)
+            if (str.Contains("-"))
             {
-                if (i == 0)
+                var res = (str.Replace("-","").Replace(".","").Replace(" ","")).OrderBy(x => { return x; }).ToList();
+                s = "-";
+                for (int i = 0; i < res.Count(); i++)
                 {
-                    smallestStrengthDifference = asdf[i] - asdf[i + 1];
+                    if (i == 1)
+                        s += "." + res[i].ToString();
+                    else
+                    {
+                        s+= res[i].ToString();
+                    }
+
                 }
-                else if (asdf[i - 1] - asdf[i] < smallestStrengthDifference)
+            }
+            else
+            {
+                var res = (str.Replace("-", "").Replace(".", "").Replace(" ", "")).OrderByDescending(x => { return x; }).ToList();
+                for (int i = 0; i < res.Count(); i++)
                 {
-                    smallestStrengthDifference = asdf[i - 1] - asdf[i];
+                    if (i == res.Count() - 1)
+                    {
+                        s += "." + res[i].ToString();
+                    }
+                    else
+                    {
+                        s += res[i].ToString();
+                    }
                 }
             }
 
-            Console.WriteLine(smallestStrengthDifference);
-
-
+            int.Parse(s);
             string[] inputs = Console.ReadLine().Split(' ');
             int lightX = 10;//int.Parse(inputs[0]); // the X position of the light of power
             int lightY = 10;//int.Parse(inputs[1]); // the Y position of the light of power
