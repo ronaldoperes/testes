@@ -1,21 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 
 namespace Android1.Resources
 {
-    public partial class Resource
+    [BroadcastReceiver(Enabled = true)]
+    [IntentFilter(new[] { Intent.ActionBootCompleted })]
+    public class MyBootReceiver : BroadcastReceiver
     {
-        public static void UpdateIdValues()
+        public override void OnReceive(Context context, Intent intent)
         {
+            // Do stuff here when device reboots.
+            context.StartActivity(typeof(MainActivity));
         }
     }
 }

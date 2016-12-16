@@ -1,15 +1,9 @@
 ﻿using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Quobject.SocketIoClientDotNet.Client;
-using System.Threading.Tasks;
-using Android.Media;
-using System.Threading;
-using System.IO;
 using System.Collections.Generic;
 
 namespace Android1
@@ -41,7 +35,11 @@ namespace Android1
             VideoView video = FindViewById<VideoView>(Resource.Id.myVideo);
             video.SystemUiVisibility = StatusBarVisibility.Hidden;
 
-
+            if (!video.IsPlaying)
+            {
+                socket.Emit("START");
+                video.Start();
+            }
             //Window.ClearFlags(WindowManagerFlags.TurnScreenOn);
 
             //var metrics = Resources.DisplayMetrics;
