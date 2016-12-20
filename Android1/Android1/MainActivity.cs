@@ -18,18 +18,20 @@ namespace Bradesco
         MainLauncher = true,  Icon = "@drawable/icon", Theme = "@android:style/Theme.NoTitleBar.Fullscreen",
         Immersive = true)]
     public class MainActivity : Activity
-    {                
+    {                        
         private int count = 0;
 
         Socket socket = IO.Socket("http://192.168.0.10:3000");
-                
+
+        private ComponentName adminComponentName;
+        private DevicePolicyManager devicePM;
+
         private MediaController mediaController;
-        bool primeiro = false;
+        //bool primeiro = false;
         
         private const string PrefKioskMode = "pref_kiosk_mode";
 
-        
-        
+                
         //protected override void OnResume()
         //{
         //    base.OnResume();
@@ -53,16 +55,26 @@ namespace Bradesco
         //    //this.StartActivity(intent);
         //}
      
-
+        
         protected override void OnCreate(Bundle bundle)
-        {
+        {            
             base.OnCreate(bundle);
+
+            //adminComponentName = new ComponentName(this.BaseContext, "AdminReceiver");
+
             
+            //devicePM = (DevicePolicyManager)GetSystemService(Context.DevicePolicyService);
+
+            ////devicePM.SetLockTaskPackages(adminComponentName, new String[] { "./.AdminReceiver" });
+
+            //devicePM.LockNow();
+
 
             Window.AddFlags(WindowManagerFlags.Fullscreen);// | WindowManagerFlags.TurnScreenOn);
             Window.AddFlags(WindowManagerFlags.KeepScreenOn);
             Window.AddFlags(WindowManagerFlags.DismissKeyguard);
             Window.AddFlags(WindowManagerFlags.NotFocusable);
+            Window.AddFlags(WindowManagerFlags.TranslucentStatus);            
 
 
             IntentFilter filter = new IntentFilter(Intent.ActionScreenOff);
@@ -142,10 +154,10 @@ namespace Bradesco
                 //socket.Emit("RESTART", video.CurrentPosition);
             });
 
-            socket.On("primeiro", (data) =>
-            {
-                primeiro = true;
-            });
+            //socket.On("primeiro", (data) =>
+            //{
+            //    primeiro = true;
+            //});
 
             //Console.WriteLine(primeiro);
 
@@ -198,8 +210,8 @@ namespace Bradesco
             StartLockTask();
             SendBroadcast(new Intent(Intent.ActionCloseSystemDialogs));
         }
-        
 
+   
 
         public override void OnBackPressed()
         {
