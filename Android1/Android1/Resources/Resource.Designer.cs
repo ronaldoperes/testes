@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Android1.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Bradesco.Resource", IsApplication=true)]
 
-namespace Android1
+namespace Bradesco
 {
 	
 	
