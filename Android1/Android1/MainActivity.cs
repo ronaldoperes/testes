@@ -130,7 +130,6 @@ namespace Bradesco
                     this.Finish();
             };
 
-
             mediaController = new MediaController(this, true);
             video.SetMediaController(mediaController);
 

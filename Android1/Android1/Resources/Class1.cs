@@ -30,8 +30,6 @@ namespace Bradesco.Resources
         {
             // Do stuff here when device reboots.
             //context.StartActivity(typeof(MainActivity));
-            intent2.AddFlags(ActivityFlags.TaskOnHome);
-            
             var intent = new Intent(context, typeof(MainActivity));
             intent.AddFlags(ActivityFlags.NewTask);
             context.StartActivity(intent);
