@@ -126,8 +126,8 @@ namespace Bradesco
                 video.Start();
                 count++;
 
-                if (count > 50)
-                    this.Finish();
+                //if (count > 50)
+                //    this.Finish();
             };
 
             mediaController = new MediaController(this, true);
