@@ -4,7 +4,7 @@ using Android.Widget;
 using Android.Content.PM;
 using Android.App.Admin;
 
-namespace Bradesco
+namespace AndroidTest
 {
     public class Common
     {
@@ -29,7 +29,7 @@ namespace Bradesco
         {
             ComponentName deviceAdmin = new ComponentName(c, "AdminReceiver");
             DevicePolicyManager dpm = (DevicePolicyManager)c.GetSystemService(Context.DevicePolicyService);
-            dpm.SetLockTaskPackages(deviceAdmin, new string[] { "br.com.bizsys.bradescovideo" });
+            dpm.SetLockTaskPackages(deviceAdmin, new string[] { "br.com.AndroidTest" });
 
             if (!dpm.IsAdminActive(deviceAdmin))
             {
