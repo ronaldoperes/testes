@@ -1,2 +1,3 @@
-# testes
-Testes e exemplos
+# Android Xamarin - learning
+Learning Xamarin, to create an app.
+
