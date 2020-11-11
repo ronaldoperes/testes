@@ -2,9 +2,9 @@ using Android.App;
 using Android.Content;
 using Android.App.Admin;
 using Android.Widget;
-using Bradesco;
+using AndroidTest;
 
-namespace Bradesco.Resources
+namespace AndroidTest.Resources
 {
     //[BroadcastReceiver(Enabled = true)]
     //[IntentFilter(new[] { Intent.ActionBootCompleted })]
@@ -20,7 +20,7 @@ namespace Bradesco.Resources
     //    }
     //}
 
-    [BroadcastReceiver(Permission = "android.permission.BIND_DEVICE_ADMIN", Enabled = true, Name = "br.com.bizsys.bradescovideo.AdminReceiver")]
+    [BroadcastReceiver(Permission = "android.permission.BIND_DEVICE_ADMIN", Enabled = true, Name = "br.com.AndroidTest.AdminReceiver")]
     [MetaData("android.app.device_admin", Resource = "@xml/device_admin")]
     [IntentFilter(new[] {"android.app.action.DEVICE_ADMIN_ENABLED", Intent.ActionBootCompleted, Intent.ActionMain})]
     
