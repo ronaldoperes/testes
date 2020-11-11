@@ -7,14 +7,14 @@ using Android.OS;
 using Quobject.SocketIoClientDotNet.Client;
 using System.Collections.Generic;
 using Android.Content;
-using Bradesco.Resources;
+using AndroidTest.Resources;
 using Android.Preferences;
 
-namespace Bradesco
+namespace AndroidTest
 {    
     
 
-    [Activity(Label = "Bradesco", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape,
+    [Activity(Label = "AndroidTest", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape,
         MainLauncher = true,  Icon = "@drawable/icon", Theme = "@android:style/Theme.NoTitleBar.Fullscreen",
         Immersive = true)]
     public class MainActivity : Activity
@@ -239,7 +239,7 @@ namespace Bradesco
 
            
 
-            return base.DispatchKeyEvent(e);
+            return base.DispatchKeyEvent(e);           
         }
 
         //protected override void OnPause()
